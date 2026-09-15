@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0F2233;
+  --color-primary-soft: #314659;
+
+  --color-text: #667481;
+  --color-text-muted: #98A3AD;
+
+  --color-bg: #F7F8F6;
+  --color-surface: #FBFCFA;
+  --color-surface-soft: #EEF1EE;
+
+  --color-accent: #2F7A67;
+  --color-accent-soft: #DCEBE5;
+
+	--color-border: #D8DEDB;
+}
+
+html {
+	scroll-behavior: smooth;
+}

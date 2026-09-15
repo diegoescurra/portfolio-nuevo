@@ -1,0 +1,4 @@
+---
+const services = [['Sitios web', 'Landing pages, sitios corporativos y páginas para servicios.'], ['Aplicaciones web', 'Sistemas a medida, paneles, formularios y gestión de datos.'], ['Integraciones', 'Conexión con APIs, servicios externos y automatizaciones.'], ['Mantenimiento', 'Optimización, mejoras y soporte para sistemas existentes.']];
+---
+<section class="border-y border-[var(--color-border)] bg-[var(--color-surface)]"><div class="mx-auto grid max-w-[1440px] divide-y divide-[var(--color-border)] px-5 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4 lg:px-9">{services.map(([title, description]) => (<article class="py-8 md:px-7 md:first:pl-0 lg:px-8"><span class="mb-4 block h-6 w-6 rounded border border-[var(--color-primary-soft)]" aria-hidden="true"></span><h2 class="text-sm font-semibold text-[var(--color-primary)]">{title}</h2><p class="mt-2 text-[11px] leading-5 text-[var(--color-text)]">{description}</p></article>))}</div></section>

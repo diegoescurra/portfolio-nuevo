@@ -1,0 +1,19 @@
+---
+import Image from "astro/components/Image.astro";
+import heroImage from "@/assets/images/hero-home.png";
+---
+
+<section class="mx-auto grid max-w-[1440px] overflow-hidden px-5 pt-12 lg:grid-cols-2 lg:px-9 lg:pt-20">
+	<div class="flex flex-col justify-center pb-12 lg:pb-8 lg:pr-12">
+		<p class="mb-4 text-[10px] font-bold tracking-[0.16em] text-[var(--color-text)]">DESARROLLO WEB A TU MEDIDA</p>
+		<h1 class="max-w-[520px] text-4xl font-semibold leading-[1.08] tracking-[-0.05em] text-[var(--color-primary)] sm:text-5xl lg:text-[3.5rem]">Ideas que se convierten en resultados</h1>
+		<p class="mt-5 max-w-[480px] text-sm leading-6 text-[var(--color-primary-soft)]">Desarrollo sitios y aplicaciones web que ayudan a negocios y organizaciones a crecer, simplificar procesos y conectar con sus usuarios.</p>
+		<div class="mt-7 flex flex-wrap gap-4"><a href="/contacto" class="rounded-xl bg-[var(--color-accent)] px-6 py-4 text-[11px] font-medium text-white">Hablemos de tu proyecto</a><a href="/proyectos" class="rounded-xl border border-[var(--color-primary-soft)] px-6 py-4 text-[11px] font-medium text-[var(--color-primary)]">Ver proyectos</a></div>
+		<div class="mt-10 grid grid-cols-3 divide-x divide-[var(--color-border)]">
+			<div><strong class="block text-base text-[var(--color-primary)]">5+</strong><span class="mt-1 block text-[10px] text-[var(--color-text)]">proyectos en producción</span></div><div class="pl-5"><strong class="block text-base text-[var(--color-primary)]">3+</strong><span class="mt-1 block text-[10px] text-[var(--color-text)]">años de experiencia</span></div><div class="pl-5"><strong class="block text-base text-[var(--color-primary)]">100%</strong><span class="mt-1 block text-[10px] text-[var(--color-text)]">enfocado en soluciones reales</span></div>
+		</div>
+	</div>
+	<div class="relative min-h-[380px] bg-[var(--color-surface-soft)] lg:min-h-[540px]">
+		<Image src={heroImage} alt="Proyecto destacado" />
+	</div>
+</section>
