@@ -1,5 +1,6 @@
 ---
 title: "Portteck"
+slug: "portteck"
 subtitle: "Aplicación móvil de documentación técnica"
 description: "Aplicación móvil para consultar manuales e información técnica de productos de control de acceso."
 

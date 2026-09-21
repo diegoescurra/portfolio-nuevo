@@ -1,5 +1,6 @@
 ---
 title: "BarVaron"
+slug: "barvaron"
 subtitle: "Barbería y estética masculina · sitio web a medida"
 description: "Sitio web para barbería con múltiples sucursales y agendamiento online."
 

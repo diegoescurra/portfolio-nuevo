@@ -1,5 +1,6 @@
 ---
 title: "Ranut"
+slug: "ranut"
 subtitle: "Servicios e insumos para máquinas de café"
 description: "Landing page para presentar servicios, insumos y máquinas de café orientadas a empresas y negocios."
 

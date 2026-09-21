@@ -1,11 +1,14 @@
 ---
 import '../styles/global.css';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
 
 interface Props {
 	title?: string;
+	headerOverlay?: boolean;
 }
 
-const { title = 'Diego Escurra' } = Astro.props;
+const { title = 'Diego Escurra', headerOverlay = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,8 +21,10 @@ const { title = 'Diego Escurra' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-[var(--color-bg)] font-sans antialiased">
+	<body class="bg-[var(--color-bg)] font-sans text-base antialiased">
+		<Header overlay={headerOverlay} />
 		<slot />
+		<Footer />
 	</body>
 </html>
 

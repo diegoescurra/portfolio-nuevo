@@ -1,5 +1,6 @@
 ---
 title: "Altomonte"
+slug: "altomonte"
 subtitle: "Plataforma web para corredora de propiedades"
 description: "Plataforma web desarrollada para la publicación y gestión de propiedades de una corredora independiente."
 

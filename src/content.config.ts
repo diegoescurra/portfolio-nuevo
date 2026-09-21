@@ -12,6 +12,7 @@ const projects = defineCollection({
     schema: ({ image }) =>
         z.object({
             title: z.string(),
+            slug: z.string(),
             subtitle: z.string(),
             description: z.string(),
 
@@ -29,7 +30,7 @@ const projects = defineCollection({
 
             stack: z.array(z.string()),
             highlights: z.array(z.string()),
-
+            quote: z.string().optional(),
             featured: z.boolean().default(false),
             order: z.number(),
 

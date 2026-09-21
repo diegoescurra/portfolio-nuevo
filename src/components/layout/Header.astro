@@ -1,0 +1,23 @@
+---
+
+const link = [ { href: "/", label: "Inicio" }, { href: "/proyectos", label: "Proyectos" }, { href: "/servicios", label: "Servicios" }, { href: "/perfil-tecnico", label: "Perfil técnico" } ];
+
+interface Props {
+	overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
+---
+
+
+<header class:list={["mx-auto flex max-w-[1440px] items-center justify-between px-5 py-6 lg:px-9", { "absolute inset-x-0 top-0 z-10": overlay }]}>
+	<a href="/" class="text-sm font-bold tracking-tight text-[var(--color-primary)]">Diego Escurra</a>
+	<nav class="hidden items-center gap-8 text-sm font-medium text-[var(--color-primary)] md:flex" aria-label="Principal">
+		{link.map((item) => (
+			<a href={item.href} class="border-b border-[var(--color-primary)] pb-2">
+				{item.label}
+			</a>
+		))}
+	</nav>
+	<a href="/contacto" class="rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-medium text-white">Contacto</a>
+</header>

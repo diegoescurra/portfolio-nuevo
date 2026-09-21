@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import About from '../components/home/About.astro';
 import CallToAction from '../components/home/CallToAction.astro';
-import Footer from '../components/home/Footer.astro';
-import Header from '../components/home/Header.astro';
+
 import Hero from '../components/home/Hero.astro';
 import Process from '../components/home/Process.astro';
-import Projects from '../components/home/Projects.astro';
+import ProjectList from '../components/ui/ProjectList.astro';
 import Services from '../components/home/Services.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -15,14 +15,22 @@ const featuredProjects = projects.filter((project) => project.data.featured);
 
 ---
 
-<Layout title="Diego Escurra | Desarrollo web">
-	<Header />
+<Layout title="Diego Escurra | Desarrollo web" headerOverlay>
 	<main>
 		<Hero />
 		<Services />
-		<Projects data={featuredProjects} />
+		<section class="mx-auto max-w-[1440px] px-5 py-18 lg:px-9 lg:py-24">
+			<div class="flex items-end justify-between gap-6">
+				<div>
+					<p class="text-sm font-bold tracking-[0.14em] text-[var(--color-text)]">PROYECTOS DESTACADOS</p>
+					<h2 class="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[var(--color-primary)]">Trabajo que genera impacto</h2>
+				</div>
+				<a href="/proyectos" class="hidden text-sm font-medium text-[var(--color-primary)] sm:block">Ver todos los proyectos</a>
+			</div>
+			<div class="mt-8"><ProjectList projects={featuredProjects} /></div>
+		</section>
 		<Process />
+		<About />
 		<CallToAction />
 	</main>
-	<Footer />
 </Layout>
