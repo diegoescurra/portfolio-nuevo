@@ -11,7 +11,6 @@ year: 2025
 
 role: "Desarrollo Full Stack"
 
-website: "https://www.portteck.cl"
 
 cover: "@/assets/projects/portteck/portteck.png"
 coverAlt: "Vista previa de la aplicación móvil de Portteck"

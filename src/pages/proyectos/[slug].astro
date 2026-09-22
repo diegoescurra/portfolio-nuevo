@@ -32,7 +32,7 @@ const followingProject = projects.length > 1 ? projects[(currentIndex + 1) % pro
 const { data } = project;
 ---
 
-<Layout title={`${data.title} | Diego Escurra`} headerOverlay>
+<Layout title={`${data.title} | Diego Escurra`}>
     <main>
         <ProjectHero project={data} previousProject={previousProject} nextProject={nextProject} />
         <ProjectMeta client={data.client} year={data.year} role={data.role} website={data.website} />

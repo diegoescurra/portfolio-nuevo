@@ -1,4 +1,6 @@
 ---
+import { WHATSAPP_URL } from '@/contact';
+
 const links = [
 	{ href: "/", label: "Inicio" },
 	{ href: "/proyectos", label: "Proyectos" },
@@ -37,7 +39,9 @@ const isActive = (href: string) => href === '/' ? pathname === href : pathname =
 			))}
 		</nav>
 		<a
-			href="/contacto"
+			href={WHATSAPP_URL}
+			target="_blank"
+			rel="noreferrer"
 			class="hidden justify-self-end rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] md:inline-flex"
 		>
 			Contacto
@@ -62,7 +66,7 @@ const isActive = (href: string) => href === '/' ? pathname === href : pathname =
 					{item.label}
 				</a>
 			))}
-			<a href="/contacto" aria-current={isActive('/contacto') ? 'page' : undefined} class:list={["block border-b border-[var(--color-border)] py-6 text-2xl font-semibold tracking-[-0.04em] transition-colors hover:text-[var(--color-accent)]", isActive('/contacto') ? "text-[var(--color-accent)]" : ""]}>Contacto</a>
+			<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" class="block border-b border-[var(--color-border)] py-6 text-2xl font-semibold tracking-[-0.04em] transition-colors hover:text-[var(--color-accent)]">Contacto</a>
 		</div>
 	</nav>
 </header>

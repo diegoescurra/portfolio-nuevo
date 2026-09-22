@@ -22,8 +22,6 @@ const services = [
         title: "Aplicaciones e integraciones",
         description:
             "Gestiona información y conecta herramientas de trabajo. Desarrollo paneles y aplicaciones a medida, con publicación de contenido y conexión a servicios externos.",
-        link: "https://www.portteck.cl/",
-        linkLabel: "Ver Portteck",
         badge: "Proyecto archivado",
         imageLabel: "Imágen de aplicación de Portteck.",
         image: portteck
@@ -107,11 +105,6 @@ const questions = [
                                             {service.linkLabel}
                                             <ArrowRight class="h-4 w-4" stroke-width={1.8} aria-hidden="true" />
                                         </a>
-                                        {service.badge && (
-                                            <span class="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-xs font-medium text-[var(--color-text)]">
-                                                {service.badge}
-                                            </span>
-                                        )}
                                     </div>
                                 )}
                             </div>

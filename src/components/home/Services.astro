@@ -37,14 +37,14 @@ const services = [
     >
         {
             services.map(({ title, description, icon : Icon }) => (
-                <article class="service text-sm">
-                    <>
-                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                <article class="service flex gap-3 text-sm md:block">
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)] md:h-11 md:w-11">
                             <Icon class="h-6 w-6" stroke-width={2} />
-                        </div>
-                        <h2 class="mt-5 text-base font-semibold text-[var(--color-primary)]">{title}</h2>
-                        <p class="mt-2 leading-6 text-[var(--color-primary-soft)]">{description}</p>
-                    </>
+                    </div>
+                    <div class="min-w-0">
+                        <h2 class="text-base font-semibold text-[var(--color-primary)] md:mt-5">{title}</h2>
+                        <p class="mt-1 leading-5 text-[var(--color-primary-soft)] md:mt-2 md:leading-6">{description}</p>
+                    </div>
                 </article>
             ))
         }
@@ -53,7 +53,7 @@ const services = [
 
 <style>
     .service {
-        padding-block: 2.25rem;
+        padding-block: 1.25rem;
         border-bottom: 1px solid var(--color-border);
     }
 

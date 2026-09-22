@@ -1,13 +1,13 @@
 ---
 import { Download, Mail } from "@lucide/astro";
-import { EMAIL_URL } from '@/contact';
+import { EMAIL_URL, GITHUB_URL, LINKEDIN_URL } from '@/contact';
 const socialLinks = [
-	{ label: 'GitHub', href: 'https://github.com', icon: 'github' },
-	{ label: 'LinkedIn', href: 'https://www.linkedin.com', icon: 'linkedin' },
+	{ label: 'GitHub', href: GITHUB_URL, icon: 'github' },
+	{ label: 'LinkedIn', href: LINKEDIN_URL, icon: 'linkedin' },
 ];
 ---
 
-<section class="pb-10 pt-12 md:pb-12 md:pt-16">
+<section class="pb-10 pt-14 md:pb-12 md:pt-20">
 	<div>
 		<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">DESARROLLO WEB Y SOLUCIONES DIGITALES</p>
 		<h1 class="mt-2 text-5xl font-semibold leading-none tracking-[-0.055em] text-[var(--color-primary)] sm:text-6xl">

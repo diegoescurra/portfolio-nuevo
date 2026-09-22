@@ -1,5 +1,5 @@
 ---
-import { EMAIL_URL } from '@/contact';
+import { EMAIL_URL, GITHUB_URL, LINKEDIN_URL } from '@/contact';
 ---
 
 <footer
@@ -16,7 +16,7 @@ import { EMAIL_URL } from '@/contact';
                 Desarrollo web para ideas que importan.
             </p>
         </div><div class="flex gap-6 text-[var(--color-primary)]">
-            <a href="#">LinkedIn</a><a href="#">GitHub</a><a href={EMAIL_URL}>Email</a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">LinkedIn</a><a href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a><a href={EMAIL_URL}>Email</a>
         </div>
     </div><div class="flex flex-col gap-5 pt-7 md:flex-row md:items-center md:justify-between">
         <p>© 2026 Diego Escurra. Todos los derechos reservados.</p><nav class="flex gap-5">
