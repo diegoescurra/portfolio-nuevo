@@ -16,10 +16,12 @@ coverAlt: "Vista de la plataforma inmobiliaria de Altomonte Bienes Raíces"
 stack:
   - name: Next.js
     category: development
-  - name: API REST
-    category: integration
+  - name: Node.js
+    category: development
   - name: Cloudinary
     category: integration
+  - name: PostgreSQL
+    category: development
 
 highlights:
   - "Desarrollo del sitio público y del panel de administración"

@@ -1,15 +1,16 @@
 ---
-import { Mail } from '@lucide/astro';
+import { MessageCircle } from '@lucide/astro';
+import { WHATSAPP_URL } from '@/contact';
 ---
 
-<section class="grid gap-5 border-y border-[var(--color-border)] py-8 md:grid-cols-[0.8fr_1.25fr_auto] md:items-center md:gap-10">
+<section class="flex flex-col gap-5 border-y border-[var(--color-border)] py-8 md:flex-row md:items-center md:justify-between md:gap-10">
 	<div>
 		<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">CONVERSEMOS</p>
-		<h2 class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)] sm:text-4xl">¿Hablamos?</h2>
+		<h2 class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)]">¿Hablamos?</h2>
+		<p class="mt-2 max-w-xl leading-6 text-[var(--color-text)]">Si tienes una oportunidad, un proyecto o simplemente quieres conversar, puedes escribirme.</p>
 	</div>
-	<p class="max-w-lg text-sm leading-6 text-[var(--color-text)]">Si tienes una oportunidad, un proyecto o simplemente quieres conversar, puedes escribirme. Te responderé a la brevedad.</p>
-	<a href="/contacto" class="inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)]">
-		<Mail size={17} aria-hidden="true" />
-		Enviar mensaje
+	<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" class="inline-flex w-fit items-center gap-2 rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)]">
+		<MessageCircle size={17} aria-hidden="true" />
+		Enviar mensaje por WhatsApp
 	</a>
 </section>

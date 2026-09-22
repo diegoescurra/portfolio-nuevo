@@ -1,3 +1,7 @@
+---
+import { WHATSAPP_URL } from '@/contact';
+---
+
 <section class="bg-[var(--color-primary)]">
 	<div class="mx-auto max-w-[1440px] px-5 py-12 lg:px-9 lg:py-14">
 		<div class="max-w-[780px]">
@@ -9,7 +13,9 @@
 				Cuéntame qué necesitas y conversemos sobre la mejor forma de llevarlo adelante.
 			</p>
 			<a
-				href="/contacto"
+				href={WHATSAPP_URL}
+				target="_blank"
+				rel="noreferrer"
 				class="mt-8 inline-flex w-fit rounded-xl bg-white px-6 py-4 text-sm font-semibold text-[var(--color-primary)] transition-colors hover:bg-[var(--color-accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
 			>
 				Hablemos de tu proyecto

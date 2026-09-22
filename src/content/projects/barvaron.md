@@ -45,10 +45,7 @@ stack:
     category: development
   - name: Tailwind CSS
     category: development
-  - name: AgendaPro
-    category: integration
-  - name: Vercel
-    category: deployment
+
 
 highlights:
   - "Diseño y desarrollo del sitio web"

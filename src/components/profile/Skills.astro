@@ -1,40 +1,31 @@
 ---
 const primarySkills = [
-	{ title: 'Frontend e interfaces', description: 'Interfaces web accesibles y responsivas.', tools: ['React', 'Next.js', 'Tailwind CSS'] },
-	{ title: 'Backend y APIs', description: 'Desarrollo de APIs y lógica de negocio.', tools: ['Node.js', 'Express'] },
-	{ title: 'Bases de datos', description: 'Diseño y gestión de datos relacionales y no relacionales.', tools: ['PostgreSQL', 'MongoDB'] },
-	{ title: 'Integraciones', description: 'Conexión con servicios externos y APIs de terceros.', tools: ['REST', 'OpenAI'] },
-	{ title: 'Despliegue y mantenimiento', description: 'Infraestructura y operación de aplicaciones.', tools: ['Vercel', 'Docker'] },
+	{ title: 'Frontend e interfaces', tools: ['React', 'Nuxt.js', 'Tailwind CSS'] },
+	{ title: 'Backend y APIs', tools: ['Node.js', 'Express'] },
+	{ title: 'Bases de datos', tools: ['PostgreSQL', 'MongoDB'] },
+	{ title: 'Integraciones', tools: ['REST', 'OpenAI'] },
+	{ title: 'Despliegue y mantenimiento', tools: ['Vercel', 'Docker'] },
 ];
 
 const secondarySkills = ['TypeScript', 'HTML', 'CSS', 'WordPress', 'Git', 'Figma', 'Postman'];
 ---
 
-<section class="border-t border-[var(--color-border)] py-10 md:py-12">
-	<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">CAPACIDADES TÉCNICAS</p>
-	<h2 class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)] sm:text-4xl">Tecnologías y herramientas</h2>
+<section class="rounded-xl bg-[var(--color-surface-soft)] p-6 sm:p-7">
+	<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-primary-soft)]">CAPACIDADES TÉCNICAS</p>
+	<h2 class="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[var(--color-primary)]">Tecnologías y herramientas</h2>
 
-	<div class="mt-5">
-		<h3 class="text-lg font-semibold text-[var(--color-primary)]">Uso habitual</h3>
-		<p class="mt-1 text-sm text-[var(--color-text)]">Tecnologías que utilizo regularmente en mis proyectos.</p>
-		<div class="mt-5 grid gap-px overflow-hidden rounded-lg bg-[var(--color-border)] sm:grid-cols-2 lg:grid-cols-5">
-			{primarySkills.map((skill) => (
-				<article class="flex min-h-40 flex-col bg-[var(--color-bg)] p-4">
-					<h4 class="font-semibold leading-5 text-[var(--color-primary)]">{skill.title}</h4>
-					<p class="mt-2 text-sm leading-5 text-[var(--color-text)]">{skill.description}</p>
-					<div class="mt-auto flex flex-wrap gap-2 pt-4">
-						{skill.tools.map((tool) => <span class="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-primary)]">{tool}</span>)}
-					</div>
-				</article>
-			))}
-		</div>
-	</div>
+	<p class="mt-6 text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-primary-soft)]">Uso habitual</p>
+	<dl class="mt-4 space-y-5">
+		{primarySkills.map((skill) => (
+			<div>
+				<dt class="text-sm font-semibold text-[var(--color-primary)]">{skill.title}</dt>
+				<dd class="mt-1 leading-6 text-[var(--color-primary-soft)]">{skill.tools.join(' · ')}</dd>
+			</div>
+		))}
+	</dl>
 
-	<div class="mt-7 border-t border-[var(--color-border)] pt-6">
-		<h3 class="text-lg font-semibold text-[var(--color-primary)]">Experiencia en proyectos</h3>
-		<p class="mt-1 text-sm text-[var(--color-text)]">Otras tecnologías y herramientas que he utilizado en distintos contextos.</p>
-		<div class="mt-4 flex flex-wrap gap-2">
-			{secondarySkills.map((skill) => <span class="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-xs text-[var(--color-primary)]">{skill}</span>)}
-		</div>
+	<div class="mt-6">
+		<h3 class="text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-primary-soft)]">Experiencia en proyectos</h3>
+		<p class="mt-2 leading-6 text-[var(--color-primary-soft)]">{secondarySkills.join(' · ')}</p>
 	</div>
 </section>

@@ -1,6 +1,16 @@
 ---
 import { Braces, Check, Cloud, Database, FileCog, MousePointerClick, Plug } from "@lucide/astro";
 import type { CollectionEntry } from "astro:content";
+import astroIcon from "@/assets/svg/astro.svg";
+import dockerIcon from "@/assets/svg/docker.svg";
+import nodeIcon from "@/assets/svg/nodedotjs.svg";
+import reactIcon from "@/assets/svg/react.svg";
+import supabaseIcon from "@/assets/svg/supabase.svg";
+import tailwindIcon from "@/assets/svg/tailwindcss.svg";
+import nextIcon from "@/assets/svg/nextdotjs.svg";
+import sanity from "@/assets/svg/sanity.svg";
+import cloudinary from "@/assets/svg/cloudinary.svg";
+import postgresIcon from "@/assets/svg/postgresql.svg";
 
 type Stack = CollectionEntry<"projects">["data"]["stack"];
 type StackCategory = Stack[number]["category"];
@@ -22,9 +32,24 @@ const categories: Array<{ key: StackCategory; label: string; icon: typeof Braces
     { key: "infrastructure", label: "Infraestructura", icon: Database },
 ];
 
+const brandIcons: Partial<Record<string, typeof astroIcon>> = {
+    Astro: astroIcon,
+    Docker: dockerIcon,
+    "Node.js": nodeIcon,
+    React: reactIcon,
+    "React Native": reactIcon,
+    Supabase: supabaseIcon,
+    "Tailwind CSS": tailwindIcon,
+    "Next.js": nextIcon,
+    Sanity: sanity,
+    Cloudinary: cloudinary,
+    PostgreSQL: postgresIcon,
+};
+
 const technologies = stack.map((item) => ({
     ...item,
     icon: categories.find((category) => category.key === item.category)?.icon ?? Braces,
+    brandIcon: brandIcons[item.name],
 }));
 
 const hasSummary = challenge.length > 0 || highlights.length > 0 || technologies.length > 0;
@@ -100,12 +125,25 @@ const hasContribution = highlights.length > 0 || technologies.length > 0;
 
                                         return (
                                             <li class="flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm font-medium text-[var(--color-primary)]">
-                                                <Icon
-                                                    size={16}
-                                                    stroke-width={1.75}
-                                                    class="text-[var(--color-accent)]"
-                                                    aria-hidden="true"
-                                                />
+                                                {item.brandIcon ? (
+                                                    <span class="flex h-4 w-4 shrink-0 items-center overflow-hidden" aria-hidden="true">
+                                                        <img
+                                                            src={item.brandIcon.src}
+                                                            alt=""
+                                                            class:list={[
+                                                                "h-4 max-w-none",
+                                                                item.name === "Astro" ? "w-auto" : "w-4",
+                                                            ]}
+                                                        />
+                                                    </span>
+                                                ) : (
+                                                    <Icon
+                                                        size={16}
+                                                        stroke-width={1.75}
+                                                        class="text-[var(--color-accent)]"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
                                                 <span>{item.name}</span>
                                             </li>
                                         );

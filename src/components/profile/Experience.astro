@@ -1,53 +1,78 @@
 ---
 const experience = [
 	{
-		period: '2023 – 2025',
-		location: 'Santiago, Chile',
-		company: 'IDA',
-		role: 'Desarrollador Full Stack',
-		description: 'Desarrollo y mantenimiento de plataformas web para clientes como Santo Tomás y CCLM.',
+		period: "2025 – 2026",
+		location: "Chile / Remoto",
+		company: "IDA",
+		role: "Desarrollador Full Stack",
+		description:
+			"Desarrollo y mantenimiento de plataformas web para clientes como Santo Tomás y CCLM.",
 		achievements: [
-			'Desarrollo de sitios y aplicaciones con React, Next.js y Node.js.',
-			'Integración con APIs externas y servicios institucionales.',
-			'Despliegue en entornos de producción y mantenimiento continuo.',
+			"Desarrollar y mantener funcionalidades full stack, abarcando lógica de negocio y modelado de datos.",
+			"Colaborar con equipos de diseño y producto, transformando requerimientos en soluciones técnicas implementables.",
+			"Optimizar rendimiento y Core Web Vitals en sitios en producción bajo arquitectura SSR con Nuxt.js.",
+			"Resolver incidencias en entornos productivos, asegurando estabilidad y continuidad operativa.",
+			"Integrar y consumir APIs REST, gestionando flujos de datos entre frontend y servicios externos.",
+			"Utilizar Docker para levantar y validar entornos locales, incluyendo builds de Nuxt y configuraciones de Nginx.",
+			
 		],
 	},
 	{
-		period: '2024 – Actualidad',
-		location: 'Chile / Remoto',
-		company: 'Trabajo independiente',
-		role: 'Desarrollador Web',
-		description: 'Desarrollo de sitios y aplicaciones para clientes de distintos rubros.',
+		period: "2024 – Actualidad",
+		location: "Chile / Remoto",
+		company: "Trabajo independiente",
+		role: "Desarrollador Web",
+		description: "Desarrollo de sitios y aplicaciones para clientes de distintos rubros.",
 		achievements: [
-			'Levantamiento de requerimientos y propuesta de soluciones.',
-			'Desarrollo e integración de funcionalidades a medida.',
-			'Entrega, despliegue y mantenimiento de proyectos en producción.',
+			"Desarrollar soluciones web y móviles a medida utilizando React, Next.js, Astro y Node.js, levantando requerimientos y traduciéndolos en funcionalidades técnicas.",
+			"Diseñar e implementar arquitecturas desacopladas mediante APIs REST, CMS headless y servicios backend con Node.js/Express.",
+			"Desarrollar interfaces frontend responsivas, optimizadas para distintos dispositivos y orientadas a experiencia de usuario.",
+			"Implementar soluciones enfocadas en mejorar navegación, acceso a información y contacto con clientes.",
 		],
 	},
 ];
 ---
 
-<section class="border-t border-[var(--color-border)] py-10 md:py-12">
+<section>
 	<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">EXPERIENCIA</p>
-	<h2 class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)] sm:text-4xl">Trayectoria profesional</h2>
+	<h2
+		class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)] sm:text-4xl"
+	>
+		Trayectoria profesional
+	</h2>
 
-	<div class="mt-7">
-		{experience.map((item, index) => (
-			<article class="relative grid gap-4 border-l border-[var(--color-border)] py-6 pl-7 first:pt-0 last:pb-0 md:grid-cols-[220px_1fr] md:gap-7 md:pl-10">
-				<span class:list={['absolute -left-[6px] size-3 rounded-full border-[3px] border-[var(--color-bg)] bg-[var(--color-accent)] ring-1 ring-[var(--color-border)]', index === 0 ? 'top-1' : 'top-7']}></span>
-				<div class="text-sm leading-6 text-[var(--color-text)]">
-					<p>{item.period}</p>
-					<p>{item.location}</p>
-				</div>
-				<div class="border-t border-[var(--color-border)] pt-6 md:border-l md:border-t-0 md:pl-7 md:pt-0">
-					<h3 class="text-xl font-semibold leading-tight text-[var(--color-primary)]">{item.company}</h3>
-					<p class="font-medium text-[var(--color-primary-soft)]">{item.role}</p>
-					<p class="mt-1 leading-6 text-[var(--color-text)]">{item.description}</p>
-					<ul class="mt-2 space-y-1 pl-5 text-[var(--color-text)] marker:text-[var(--color-accent)]">
-						{item.achievements.map((achievement) => <li class="list-disc pl-1">{achievement}</li>)}
-					</ul>
-				</div>
-			</article>
-		))}
+	<div class="mt-7 space-y-8">
+		{
+			experience.map((item) => (
+				<article>
+					<header class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+						<div>
+							<h3 class="text-xl font-semibold leading-tight text-[var(--color-primary)]">
+								{item.company}
+							</h3>
+							<p class="font-medium text-[var(--color-primary-soft)]">{item.role}</p>
+						</div>
+						<div class="shrink-0 text-sm leading-6 text-[var(--color-text)] sm:text-right">
+							<p>{item.period}</p>
+							<p>{item.location}</p>
+						</div>
+					</header>
+					<div class="mt-3 max-w-[760px]">
+						<p class="mt-1 leading-6 text-[var(--color-text)]">{item.description}</p>
+						<ul class="mt-3 space-y-2 text-[var(--color-text)]">
+							{item.achievements.map((achievement) => (
+								<li class="flex gap-3 leading-6">
+									<span
+										class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-[var(--color-accent)]"
+										aria-hidden="true"
+									/>
+									<span>{achievement}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				</article>
+			))
+		}
 	</div>
 </section>

@@ -4,11 +4,12 @@ import ProjectCard from './ProjectCard.astro';
 
 interface Props {
 	projects: CollectionEntry<'projects'>[];
+	headingLevel?: 2 | 3;
 }
 
-const { projects } = Astro.props;
+const { projects, headingLevel = 3 } = Astro.props;
 ---
 
 <div class="grid gap-4 md:grid-cols-2">
-	{projects.map((project) => <ProjectCard project={project} />)}
+	{projects.map((project) => <ProjectCard project={project} headingLevel={headingLevel} />)}
 </div>

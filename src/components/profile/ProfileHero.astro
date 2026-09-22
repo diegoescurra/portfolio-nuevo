@@ -1,27 +1,31 @@
 ---
-import { Download, Mail } from '@lucide/astro';
-
+import { Download, Mail } from "@lucide/astro";
+import { EMAIL_URL } from '@/contact';
 const socialLinks = [
 	{ label: 'GitHub', href: 'https://github.com', icon: 'github' },
 	{ label: 'LinkedIn', href: 'https://www.linkedin.com', icon: 'linkedin' },
 ];
 ---
 
-<section class="grid gap-8 pb-10 pt-12 md:grid-cols-[1.5fr_0.85fr] md:items-center md:pb-12 md:pt-16 lg:gap-16">
+<section class="pb-10 pt-12 md:pb-12 md:pt-16">
 	<div>
 		<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">DESARROLLO WEB Y SOLUCIONES DIGITALES</p>
 		<h1 class="mt-2 text-5xl font-semibold leading-none tracking-[-0.055em] text-[var(--color-primary)] sm:text-6xl">
 			Diego Escurra
 		</h1>
 		<p class="mt-2 text-2xl font-medium tracking-[-0.03em] text-[var(--color-primary)]">Full Stack Developer</p>
-		<p class="mt-4 max-w-[650px] text-base leading-7 text-[var(--color-text)]">
+		<p class="mt-4 max-w-[720px] text-base leading-7 text-[var(--color-text)]">
 			Desarrollo sitios y aplicaciones web, con experiencia en interfaces, integraciones y mantenimiento de sistemas en producción. He trabajado en equipos de desarrollo y directamente con clientes.
+		</p>
+		<p class="mt-3 text-sm font-medium text-[var(--color-primary-soft)]">
+			<span class="mr-2 inline-block size-2 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
+			Abierto a oportunidades · Desarrollo full stack · Remoto o híbrido desde Chile.
 		</p>
 
 		<div class="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4">
-			<a href="/contacto" class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)]">
+			<a href="/diego-escurra-cv.pdf" download class="inline-flex items-center gap-2 rounded-lg bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)]">
 				<Download size={17} aria-hidden="true" />
-				Solicitar CV
+				Descargar CV
 			</a>
 			{socialLinks.map(({ label, href, icon }) => (
 				<a href={href} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)]">
@@ -33,17 +37,10 @@ const socialLinks = [
 					{label}
 				</a>
 			))}
-			<a href="/contacto" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)]">
+			<a href={EMAIL_URL} class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)]">
 				<Mail size={18} aria-hidden="true" />
 				Email
 			</a>
 		</div>
 	</div>
-
-	<aside class="rounded-xl bg-[var(--color-surface)] p-8 shadow-[0_18px_45px_rgba(15,34,51,0.035)] md:p-10">
-		<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">ACTUALMENTE</p>
-		<p class="mt-4 text-2xl font-medium tracking-[-0.035em] text-[var(--color-primary)]">Abierto a oportunidades</p>
-		<div class="mt-5 h-0.5 w-8 bg-[var(--color-accent)]"></div>
-		<p class="mt-6 leading-7 text-[var(--color-text)]">Desarrollo full stack · Remoto o híbrido desde Chile.</p>
-	</aside>
 </section>

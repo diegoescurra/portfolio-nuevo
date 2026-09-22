@@ -18,7 +18,7 @@ const projects = await getCollection("projects");
             <p class="mt-4 max-w-[640px] leading-6 text-[var(--color-text)]">
                 Una selección de sitios y aplicaciones desarrollados para impulsar negocios.
             </p>
-            <div class="mt-10"><ProjectList projects={projects} /></div>
+            <div class="mt-10"><ProjectList projects={projects} headingLevel={2} /></div>
         </section>
     </main>
 </Layout>

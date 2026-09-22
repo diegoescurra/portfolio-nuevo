@@ -1,4 +1,5 @@
 ---
+import { WHATSAPP_URL } from '@/contact';
 
 const links = [
 	{ href: "/", label: "Inicio" },
@@ -18,32 +19,64 @@ const isActive = (href: string) => href === '/' ? pathname === href : pathname =
 
 
 <header class:list={[
-	"mx-auto grid w-full max-w-[1440px] grid-cols-[1fr_auto] items-center px-5 py-5 md:grid-cols-[1fr_auto_1fr] lg:px-9",
+	"mx-auto w-full max-w-[1440px]",
 	{ "absolute inset-x-0 top-0 z-10": overlay },
 ]}>
-	<a href="/" class="text-base font-bold tracking-[-0.02em] text-[var(--color-primary)]">Diego Escurra</a>
-	<nav class="hidden items-center gap-8 text-sm font-medium text-[var(--color-primary)] md:flex" aria-label="Principal">
+	<div class="grid grid-cols-[1fr_auto] items-center px-5 py-5 md:grid-cols-[1fr_auto_1fr] lg:px-9">
+		<a href="/" class="text-base font-bold tracking-[-0.02em] text-[var(--color-primary)]">Diego Escurra</a>
+		<nav class="hidden items-center gap-8 text-sm font-medium text-[var(--color-primary)] md:flex" aria-label="Principal">
+			{links.map((item) => (
+				<a
+					href={item.href}
+					aria-current={isActive(item.href) ? 'page' : undefined}
+					class:list={[
+						"border-b-2 px-0.5 py-2 transition-colors hover:text-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]",
+						isActive(item.href) ? "border-[var(--color-accent)] text-[var(--color-primary)]" : "border-transparent",
+					]}
+				>
+					{item.label}
+				</a>
+			))}
+		</nav>
+		<a
+			href={WHATSAPP_URL}
+			target="_blank"
+			rel="noreferrer"
+			class="hidden justify-self-end rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] md:inline-flex"
+		>
+			WhatsApp
+		</a>
+		<button type="button" class="justify-self-end p-2 md:hidden" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false" data-menu-toggle>
+			<span class="block h-0.5 w-6 bg-[var(--color-primary)]"></span>
+			<span class="mt-1.5 block h-0.5 w-6 bg-[var(--color-primary)]"></span>
+			<span class="mt-1.5 block h-0.5 w-6 bg-[var(--color-primary)]"></span>
+		</button>
+	</div>
+	<nav id="mobile-menu" class="hidden w-full border-y border-[var(--color-border)] text-sm font-medium text-[var(--color-primary)] md:hidden" aria-label="Principal móvil" data-mobile-menu>
 		{links.map((item) => (
 			<a
 				href={item.href}
 				aria-current={isActive(item.href) ? 'page' : undefined}
 				class:list={[
-					"border-b-2 px-0.5 py-2 transition-colors hover:text-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]",
-					isActive(item.href) ? "border-[var(--color-accent)] text-[var(--color-primary)]" : "border-transparent",
+					"block border-b border-[var(--color-border)] px-5 py-4 transition-colors hover:bg-[var(--color-surface-soft)]",
+					isActive(item.href) ? "bg-[var(--color-accent-soft)] text-[var(--color-primary)]" : "",
 				]}
 			>
 				{item.label}
 			</a>
 		))}
+		<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" class="block px-5 py-4 transition-colors hover:bg-[var(--color-surface-soft)]">WhatsApp</a>
 	</nav>
-	<a
-		href="/contacto"
-		aria-current={isActive('/contacto') ? 'page' : undefined}
-		class:list={[
-			"justify-self-end rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]",
-			{ "ring-2 ring-[var(--color-primary)] ring-offset-2 ring-offset-[var(--color-bg)]": isActive('/contacto') },
-		]}
-	>
-		Contacto
-	</a>
 </header>
+
+<script>
+	const toggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+	const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+
+	toggle?.addEventListener('click', () => {
+		const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+		toggle.setAttribute('aria-expanded', String(!isOpen));
+		toggle.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+		menu?.classList.toggle('hidden', isOpen);
+	});
+</script>

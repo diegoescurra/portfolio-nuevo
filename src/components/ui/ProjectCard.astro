@@ -5,20 +5,29 @@ import { ArrowRight } from '@lucide/astro';
 
 interface Props {
 	project: CollectionEntry<'projects'>;
+	headingLevel?: 2 | 3;
 }
 
-const { project } = Astro.props;
+const { project, headingLevel = 3 } = Astro.props;
 const { title, slug, description, category, cover, coverAlt } = project.data;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
 ---
 
 <article class="group h-full overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-accent)] focus-within:border-[var(--color-accent)]">
-	<a href={`/proyectos/${slug}`} class="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]" aria-label={`Ver caso de estudio: ${title}`}>
+	<a href={`/proyectos/${slug}`} class="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]">
 		<div class="relative aspect-[1.56] bg-[var(--color-surface-soft)]">
-			<Image src={cover} alt={coverAlt} class="absolute inset-0 h-full w-full object-cover object-center" />
+			<Image
+				src={cover}
+				alt={coverAlt}
+				widths={[360, 480, 640, 768]}
+				sizes="(min-width: 1440px) 678px, (min-width: 768px) calc(50vw - 2.75rem), calc(100vw - 2.5rem)"
+				quality={75}
+				class="absolute inset-0 h-full w-full object-cover object-center"
+			/>
 		</div>
 		<div class="flex flex-1 flex-col p-5">
 			<p class="text-xs font-bold tracking-[0.12em] text-[var(--color-accent)] uppercase">{category}</p>
-			<h3 class="mt-2 text-2xl font-semibold text-[var(--color-primary)]">{title}</h3>
+			<Heading class="mt-2 text-2xl font-semibold text-[var(--color-primary)]">{title}</Heading>
 			<p class="mt-2 max-w-xl leading-6 text-[var(--color-text)]">{description}</p>
 			<span class="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-semibold text-[var(--color-accent)]">
 				Ver caso de estudio
