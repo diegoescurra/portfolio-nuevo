@@ -1,0 +1,121 @@
+---
+import { Braces, Check, Cloud, Database, FileCog, MousePointerClick, Plug } from "@lucide/astro";
+import type { CollectionEntry } from "astro:content";
+
+type Stack = CollectionEntry<"projects">["data"]["stack"];
+type StackCategory = Stack[number]["category"];
+
+interface Props {
+    stack?: Stack;
+    highlights?: string[];
+    challenge?: string[];
+}
+
+const { stack = [], highlights = [], challenge = [] } = Astro.props;
+
+const categories: Array<{ key: StackCategory; label: string; icon: typeof Braces }> = [
+    { key: "development", label: "Desarrollo", icon: Braces },
+    { key: "deployment", label: "Despliegue", icon: Cloud },
+    { key: "integration", label: "Servicio conectado", icon: Plug },
+    { key: "functionality", label: "Funcionalidad", icon: MousePointerClick },
+    { key: "content", label: "Gestión de contenido", icon: FileCog },
+    { key: "infrastructure", label: "Infraestructura", icon: Database },
+];
+
+const technologies = stack.map((item) => ({
+    ...item,
+    icon: categories.find((category) => category.key === item.category)?.icon ?? Braces,
+}));
+
+const hasSummary = challenge.length > 0 || highlights.length > 0 || technologies.length > 0;
+const hasContribution = highlights.length > 0 || technologies.length > 0;
+---
+
+{
+    hasSummary && (
+        <section class="mx-auto max-w-[1440px] px-5 py-12 lg:px-9 lg:py-14">
+            <div
+                class:list={[
+                    "grid items-start gap-10",
+                    challenge.length > 0 && hasContribution && "lg:grid-cols-2 lg:gap-14",
+                ]}
+            >
+                {challenge.length > 0 && (
+                    <div class="max-w-[68ch]">
+                        <h2 class="text-3xl font-semibold tracking-[-0.04em] text-[var(--color-primary)]">
+                            El reto
+                        </h2>
+                        <div class="mt-5 space-y-4 text-base leading-7 text-[var(--color-text)]">
+                            {challenge.map((paragraph) => (
+                                <p>{paragraph}</p>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {hasContribution && (
+                    <div
+                        class:list={[
+                            challenge.length > 0 &&
+                                "lg:border-l lg:border-[var(--color-border)] lg:pl-14",
+                        ]}
+                    >
+                        {highlights.length > 0 && (
+                            <>
+                                <h2 class="text-3xl font-semibold tracking-[-0.04em] text-[var(--color-primary)]">
+                                    Mi aporte
+                                </h2>
+                                <ul class="mt-5 grid gap-x-8 gap-y-3 text-sm leading-6 text-[var(--color-text)] sm:grid-cols-2 lg:grid-cols-1">
+                                    {highlights.map((highlight) => (
+                                        <li class="flex gap-3">
+                                            <span
+                                                class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--color-accent)] text-white"
+                                                aria-hidden="true"
+                                            >
+                                                <Check size={12} stroke-width={2.5} />
+                                            </span>
+                                            {highlight}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
+
+                        {technologies.length > 0 && (
+                            <div
+                                class:list={[
+                                    "border-t border-[var(--color-border)] pt-6",
+                                    highlights.length > 0 && "mt-8",
+                                ]}
+                            >
+                                <p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)] uppercase">
+                                    Tecnologías
+                                </p>
+                                <ul
+                                    class="mt-4 flex flex-wrap gap-2.5"
+                                    aria-label="Tecnologías utilizadas"
+                                >
+                                    {technologies.map((item) => {
+                                        const Icon = item.icon;
+
+                                        return (
+                                            <li class="flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm font-medium text-[var(--color-primary)]">
+                                                <Icon
+                                                    size={16}
+                                                    stroke-width={1.75}
+                                                    class="text-[var(--color-accent)]"
+                                                    aria-hidden="true"
+                                                />
+                                                <span>{item.name}</span>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
+        </section>
+    )
+}

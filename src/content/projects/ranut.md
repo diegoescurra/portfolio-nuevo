@@ -1,10 +1,11 @@
 ---
 title: "Ranut"
 slug: "ranut"
-subtitle: "Servicios e insumos para máquinas de café"
-description: "Landing page para presentar servicios, insumos y máquinas de café orientadas a empresas y negocios."
 
-category: "Landing page"
+subtitle: "Servicios e insumos para máquinas de café"
+description: "Sitio web para presentar los servicios, insumos y máquinas de café de Ranut, con contenido administrable mediante Sanity."
+
+category: "Sitio web"
 client: "Ranut"
 year: 2025
 
@@ -12,18 +13,33 @@ role: "Diseño y desarrollo"
 
 website: "https://www.ranut.cl"
 
-cover: "@/assets/projects/ranut.png"
+cover: "@/assets/projects/ranut/ranut.png"
 coverAlt: "Vista previa del sitio web de Ranut"
 
+challenge:
+  - "Ranut necesitaba un sitio web propio para presentar su oferta de máquinas de café, insumos y servicios de soporte orientados a empresas y negocios."
+  - "La información debía organizarse para que los visitantes pudieran conocer sus productos y servicios, identificar lo que necesitaban y encontrar una forma de contacto."
+
+decision:
+  title: "Una oferta organizada y fácil de mantener"
+  description: "El sitio se estructuró para presentar los servicios y productos de forma clara, dando espacio a las distintas áreas del negocio. Se incorporó Sanity para administrar contenido sin necesidad de modificar directamente el código del sitio."
+
+result:
+  - "Ranut cuenta con un sitio web donde presenta sus máquinas de café, insumos y servicios, con accesos de contacto para quienes deseen realizar una consulta."
+  - "La integración con Sanity permite administrar el contenido desde una interfaz independiente del desarrollo, facilitando la actualización de la información publicada."
+
 stack:
-  - Astro
-  - Tailwind CSS
-  - Sanity
+  - name: Astro
+    category: development
+  - name: Tailwind CSS
+    category: development
+  - name: Sanity
+    category: content
 
 highlights:
-  - "Landing page desarrollada con Astro"
-  - "Contenido organizado por servicios y productos"
-  - "Gestión de contenido mediante Sanity"
+  - "Diseño y desarrollo del sitio web con Astro"
+  - "Organización de servicios, máquinas e insumos"
+  - "Integración con Sanity para gestión de contenido"
   - "Diseño responsive"
   - "Optimización de rendimiento y SEO técnico"
 
@@ -35,23 +51,3 @@ status: "active"
 commercial: true
 technical: true
 ---
-
-## El proyecto
-
-Ranut necesitaba una presencia web que permitiera presentar de forma clara sus servicios relacionados con máquinas de café, insumos y soporte para empresas.
-
-El objetivo fue crear un sitio simple que explicara rápidamente qué ofrece la empresa y facilitara el contacto de potenciales clientes interesados en sus productos o servicios.
-
-## Mi trabajo
-
-Desarrollé la landing page utilizando Astro y Tailwind CSS, organizando la información para que los principales servicios y productos fueran fáciles de identificar.
-
-También integré Sanity para permitir la administración de contenido sin necesidad de modificar directamente el código del sitio.
-
-El desarrollo consideró diseño responsive, rendimiento y estructura técnica orientada a buscadores.
-
-## Resultado
-
-El sitio permite a Ranut contar con un punto central donde presentar su oferta comercial y derivar consultas de potenciales clientes.
-
-La utilización de Astro mantiene una carga ligera, mientras que Sanity permite actualizar contenido sin modificar el frontend.

@@ -1,0 +1,20 @@
+---
+import Education from '@/components/profile/Education.astro';
+import Experience from '@/components/profile/Experience.astro';
+import ProfileContact from '@/components/profile/ProfileContact.astro';
+import ProfileHero from '@/components/profile/ProfileHero.astro';
+import Skills from '@/components/profile/Skills.astro';
+import TechnicalProjects from '@/components/profile/TechnicalProjects.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="Perfil técnico | Diego Escurra">
+	<main class="mx-auto max-w-[1180px] px-5 lg:px-9">
+		<ProfileHero />
+		<Experience />
+		<Skills />
+		<TechnicalProjects />
+		<Education />
+		<ProfileContact />
+	</main>
+</Layout>

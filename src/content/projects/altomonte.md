@@ -1,8 +1,8 @@
 ---
 title: "Altomonte"
 slug: "altomonte"
-subtitle: "Plataforma web para corredora de propiedades"
-description: "Plataforma web desarrollada para la publicación y gestión de propiedades de una corredora independiente."
+subtitle: "Plataforma inmobiliaria con panel de administración"
+description: "Sitio de propiedades con un panel para que el cliente pudiera publicar su oferta y cargar imágenes por su cuenta."
 
 category: "Aplicación web"
 client: "Altomonte Bienes Raíces"
@@ -10,20 +10,36 @@ year: 2024
 
 role: "Desarrollo Full Stack"
 
-cover: "@/assets/projects/altomonte_home.png"
-coverAlt: "Vista previa de la plataforma de Altomonte Bienes Raíces"
+cover: "@/assets/projects/altomonte/altomonte_home.png"
+coverAlt: "Vista de la plataforma inmobiliaria de Altomonte Bienes Raíces"
 
 stack:
-  - Next.js
-  - Node.js
-  - API REST
+  - name: Next.js
+    category: development
+  - name: API REST
+    category: integration
+  - name: Cloudinary
+    category: integration
 
 highlights:
-  - "Desarrollo Full Stack de plataforma web"
-  - "Sistema para publicación y visualización de propiedades"
-  - "Integración entre frontend y API"
-  - "Diseño responsive orientado a dispositivos móviles"
-  - "Optimización de navegación y rendimiento"
+  - "Desarrollo del sitio público y del panel de administración"
+  - "Publicación de propiedades por parte del cliente"
+  - "Conexión entre la interfaz y el backend mediante API"
+  - "Integración con Cloudinary para las imágenes"
+  - "Adaptación de la interfaz a escritorio y móvil"
+
+challenge:
+  - "Altomonte contaba con un sitio inconcluso en Wix y dependía de un desarrollador para publicar nuevas propiedades."
+  - "El objetivo era entregar una plataforma propia con un panel de administración que permitiera al cliente cargar la información y las imágenes de sus propiedades sin solicitar cada publicación a un tercero."
+
+decision:
+  title: "Publicación autónoma desde un panel de administración"
+  description: "Desarrollé un panel conectado al backend para cargar las propiedades y presentar esa información en las fichas del sitio público. En la última versión integré Cloudinary para gestionar las imágenes."
+
+result:
+  - "El cliente contó con un panel desde el que podía publicar propiedades y cargar sus imágenes por su cuenta, reduciendo su dependencia de un desarrollador para actualizar la oferta."
+  - "El proyecto tuvo tres versiones: una inicial con Handlebars y jQuery, una segunda con React y una última con Next.js."
+  - "Actualmente el sitio no está disponible públicamente y se presenta como un proyecto archivado."
 
 featured: false
 order: 6
@@ -33,23 +49,3 @@ status: "archived"
 commercial: false
 technical: true
 ---
-
-## El proyecto
-
-Altomonte Bienes Raíces necesitaba una plataforma propia para publicar propiedades y presentar su oferta inmobiliaria sin depender exclusivamente de portales externos.
-
-El proyecto contempló tanto la interfaz pública como la lógica necesaria para trabajar con la información de las propiedades.
-
-## Mi trabajo
-
-Trabajé en el desarrollo Full Stack de la plataforma, implementando la interfaz con Next.js y su comunicación con servicios backend mediante una API.
-
-La información de cada propiedad se estructuró para permitir su presentación individual, incluyendo sus principales características e información relevante para potenciales clientes.
-
-También se trabajó en la experiencia responsive y en la optimización de navegación para dispositivos móviles.
-
-## Estado del proyecto
-
-El sitio ya no se encuentra disponible públicamente.
-
-Se conserva dentro de mi portafolio técnico por el trabajo realizado en su arquitectura, frontend e integración con backend.

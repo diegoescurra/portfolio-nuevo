@@ -22,10 +22,10 @@ const featuredProjects = projects.filter((project) => project.data.featured);
 		<section class="mx-auto max-w-[1440px] px-5 py-18 lg:px-9 lg:py-24">
 			<div class="flex items-end justify-between gap-6">
 				<div>
-					<p class="text-sm font-bold tracking-[0.14em] text-[var(--color-text)]">PROYECTOS DESTACADOS</p>
-					<h2 class="mt-2 text-3xl font-semibold tracking-[-0.04em] text-[var(--color-primary)]">Trabajo que genera impacto</h2>
+					<p class="text-sm font-bold tracking-[0.14em] text-[var(--color-text)]">TRABAJO RECIENTE</p>
+					<h2 class="mt-2 text-4xl font-semibold tracking-[-0.04em] text-[var(--color-primary)] sm:text-5xl">Proyectos seleccionados</h2>
 				</div>
-				<a href="/proyectos" class="hidden text-sm font-medium text-[var(--color-primary)] sm:block">Ver todos los proyectos</a>
+				<a href="/proyectos" class="hidden text-sm font-medium text-[var(--color-primary)] transition-colors hover:text-[var(--color-accent)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)] sm:block">Ver todos los proyectos</a>
 			</div>
 			<div class="mt-8"><ProjectList projects={featuredProjects} /></div>
 		</section>

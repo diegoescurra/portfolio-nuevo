@@ -1,0 +1,45 @@
+---
+const projects = [
+	{
+		title: 'Experiencia Tomasina',
+		context: 'Sitio institucional con alto tráfico y múltiples tipos de contenido.',
+		decision: 'Desarrollo con Next.js y generación estática de contenido.',
+		result: 'Mejor rendimiento, carga más rápida y mantenimiento más simple.',
+	},
+	{
+		title: 'CCLM',
+		context: 'Plataforma de ticketera con integración a sistemas externos.',
+		decision: 'Diseño de arquitectura con Node.js, Express y base de datos PostgreSQL, integrando con Transbank.',
+		result: 'Sistema estable y escalable, con procesamiento seguro de pagos.',
+	},
+	{
+		title: 'Training For Women',
+		context: 'Aplicación web para gestión de rutinas de ejercicio con autenticación y base de datos.',
+		decision: 'Desarrollo con React y MongoDB, priorizando una interfaz simple y fácil de usar.',
+		result: 'MVP funcional entregado en plazo, con retroalimentación positiva de las usuarias.',
+	},
+];
+---
+
+<section class="border-t border-[var(--color-border)] py-10 md:py-12">
+	<div class="grid gap-4 md:grid-cols-[1.35fr_1fr] md:items-end">
+		<div>
+			<p class="text-xs font-bold tracking-[0.16em] text-[var(--color-text)]">PROYECTOS DESTACADOS</p>
+			<h2 class="mt-2 text-3xl font-semibold tracking-[-0.045em] text-[var(--color-primary)] sm:text-4xl">Decisiones técnicas en la práctica</h2>
+		</div>
+		<p class="max-w-md text-sm leading-6 text-[var(--color-text)]">Algunos proyectos donde tuve que tomar decisiones importantes de arquitectura, rendimiento o integraciones.</p>
+	</div>
+
+	<div class="mt-7 grid gap-5 md:grid-cols-3">
+		{projects.map((project) => (
+			<article class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+				<h3 class="text-lg font-semibold text-[var(--color-primary)]">{project.title}</h3>
+				<dl class="mt-3 space-y-3 text-sm leading-5">
+					<div><dt class="font-semibold text-[var(--color-primary)]">Contexto</dt><dd class="text-[var(--color-text)]">{project.context}</dd></div>
+					<div><dt class="font-semibold text-[var(--color-primary)]">Decisión</dt><dd class="text-[var(--color-text)]">{project.decision}</dd></div>
+					<div><dt class="font-semibold text-[var(--color-primary)]">Resultado</dt><dd class="text-[var(--color-text)]">{project.result}</dd></div>
+				</dl>
+			</article>
+		))}
+	</div>
+</section>

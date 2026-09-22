@@ -4,66 +4,65 @@ import heroImage from "@/assets/images/hero-home.png";
 ---
 
 <section
-	class="grid overflow-hidden lg:grid-cols-2"
+	class="mx-auto grid max-w-[1440px] gap-10 px-5 pb-16 pt-32 lg:min-h-[680px] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-start lg:gap-16 lg:px-9 lg:pb-20 lg:pt-36"
 >
-	<div class="flex flex-col justify-center px-5 pb-12 pt-28 text-base text-[var(--color-primary-soft)] lg:pb-8 lg:pl-[max(2.25rem,calc((100vw-1440px)/2+2.25rem))] lg:pr-12 lg:pt-32">
+	<div class="flex max-w-[640px] flex-col justify-center text-base text-[var(--color-primary-soft)]">
 		<p
 			class="mb-4 text-sm font-bold tracking-[0.16em] text-[var(--color-text)]"
 		>
 			DESARROLLO WEB A TU MEDIDA
 		</p>
 		<h1
-			class="max-w-[520px] text-4xl font-semibold leading-[1.08] tracking-[-0.05em] text-[var(--color-primary)] sm:text-5xl lg:text-[3.5rem]"
+			class="max-w-[640px] text-4xl font-semibold leading-[1.08] tracking-[-0.05em] text-[var(--color-primary)] sm:text-5xl lg:text-6xl"
 		>
-			Sitios y aplicaciones web para hacer avanzar tu negocio
+			Sitios y aplicaciones web para hacer avanzar <span class="lg:block">tu negocio</span>
 		</h1>
 		<p
-			class="mt-5 max-w-[480px] leading-6 text-[var(--color-primary-soft)]"
+			class="mt-5 max-w-[560px] leading-6 text-[var(--color-primary-soft)]"
 		>
-			Desarrollo sitios y aplicaciones web que ayudan a negocios y
-			organizaciones a crecer, simplificar procesos y conectar con sus
-			usuarios.
+			Ayudo a negocios y organizaciones a presentar sus servicios,
+			simplificar procesos y conectar con sus clientes.
 		</p>
 		<div class="mt-7 flex flex-wrap gap-4">
 			<a
 				href="/contacto"
-			class="rounded-xl bg-[var(--color-accent)] px-6 py-4 text-sm font-medium text-white"
+			class="rounded-xl bg-[var(--color-accent)] px-6 py-4 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
 				>Hablemos de tu proyecto</a
 			><a
 				href="/proyectos"
-				class="rounded-xl border border-[var(--color-primary-soft)] px-6 py-4 text-sm font-medium text-[var(--color-primary)]"
+				class="rounded-xl border border-[var(--color-primary-soft)] px-6 py-4 text-sm font-medium text-[var(--color-primary)] transition-colors hover:bg-[var(--color-surface-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]"
 				>Ver proyectos</a
 			>
 		</div>
-		<div class="mt-10 grid grid-cols-3 divide-x divide-[var(--color-border)] text-sm text-[var(--color-text)]">
-			<div>
+		<div class="mt-10 grid grid-cols-1 divide-y divide-[var(--color-border)] text-sm text-[var(--color-text)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+			<div class="pb-4 sm:pb-0">
 				<strong class="block text-base text-[var(--color-primary)]"
 					>5+</strong
 				><span class="mt-1 block"
 					>proyectos en producción</span
 				>
-			</div><div class="pl-5">
+			</div><div class="py-4 sm:py-0 sm:pl-5">
 				<strong class="block text-base text-[var(--color-primary)]"
 					>3+</strong
 				><span class="mt-1 block"
 					>años de experiencia</span
 				>
-			</div><div class="pl-5">
+			</div><div class="pt-4 sm:py-0 sm:pl-5">
 				<strong class="block text-base text-[var(--color-primary)]"
 					>Trato directo</strong
 				><span class="mt-1 block"
-					>conmigo durante todo el proyecto</span
+					>de principio a fin</span
 				>
 			</div>
 		</div>
 	</div>
 	<div
-		class="relative min-h-[380px] overflow-hidden lg:min-h-[540px]"
+		class="aspect-[3/2] overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-surface-soft)]"
 	>
 		<Image
 			src={heroImage}
 			alt="Proyecto destacado"
-			class="absolute inset-0 h-full w-full object-cover object-center [mask-image:linear-gradient(to_right,transparent,black_20%)]"
+			class="h-full w-full object-cover object-center"
 		/>
 	</div>
 </section>

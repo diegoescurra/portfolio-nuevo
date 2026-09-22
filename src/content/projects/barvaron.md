@@ -1,8 +1,9 @@
 ---
 title: "BarVaron"
 slug: "barvaron"
+
 subtitle: "Barbería y estética masculina · sitio web a medida"
-description: "Sitio web para barbería con múltiples sucursales y agendamiento online."
+description: "Presentación de sucursales y servicios, con acceso a reservas online."
 
 category: "Sitio web"
 client: "BarVaron"
@@ -12,18 +13,46 @@ role: "Diseño y desarrollo"
 
 website: "https://www.barvaron.cl"
 
-cover: "@/assets/projects/barvaron.png"
+cover: "@/assets/projects/barvaron/barvaron.png"
 coverAlt: "Vista previa del sitio web de BarVaron"
 
+challenge:
+  - "BarVaron contaba con un sistema de agendamiento mediante AgendaPro, pero necesitaba un sitio web propio donde presentar la barbería, sus servicios y la información de sus sucursales."
+  - "El sitio debía facilitar que cada visitante encontrara la ubicación correspondiente y accediera a sus reservas, considerando también la incorporación de nuevas sucursales."
+
+decision:
+  title: "Una entrada común para elegir sucursal"
+  description: "Se desarrolló una página principal para presentar las ubicaciones de BarVaron y dirigir a cada visitante a la sucursal correspondiente. Cada ubicación cuenta con su propio espacio para presentar servicios, información práctica y acceso a reservas mediante AgendaPro."
+
+showcase:
+  - title: "Cada sucursal con su propio espacio"
+    description: "Desde la página principal, los visitantes pueden elegir una ubicación y consultar su información, servicios y acceso a reservas."
+    image: "@/assets/projects/barvaron/barvaron-sucursal.png"
+    imageAlt: "Sección para elegir una sucursal en el sitio de BarVaron"
+
+  - title: "Una experiencia adaptada a dispositivos móviles"
+    description: "La información de la barbería, los profesionales y los servicios se organiza para facilitar la consulta y el acceso al agendamiento desde el teléfono."
+    image: "@/assets/projects/barvaron/barvaron-mobile-clean.png"
+    imageAlt: "Vistas móviles de la sucursal San Bernardo de BarVaron"
+    imageLayout: portrait
+
+result:
+  - "BarVaron cuenta con un sitio web propio donde presenta su identidad, servicios y sucursales, complementando el sistema de reservas que ya utilizaba."
+  - "La estructura permite incorporar nuevas ubicaciones sin modificar la organización general del sitio, manteniendo una experiencia consistente entre sucursales."
+
 stack:
-  - Astro
-  - Tailwind CSS
-  - AgendaPro
-  - Vercel
+  - name: Astro
+    category: development
+  - name: Tailwind CSS
+    category: development
+  - name: AgendaPro
+    category: integration
+  - name: Vercel
+    category: deployment
 
 highlights:
   - "Diseño y desarrollo del sitio web"
-  - "Estructura multipágina para sus distintas sucursales"
+  - "Estructura multipágina para distintas sucursales"
   - "Integración con AgendaPro para reservas online"
   - "Optimización de rendimiento y SEO técnico"
   - "Configuración de dominio y despliegue en Vercel"
@@ -36,23 +65,3 @@ status: "active"
 commercial: true
 technical: true
 ---
-
-## El proyecto
-
-BarVaron necesitaba renovar su presencia digital y contar con un sitio que representara mejor la experiencia de la barbería, permitiera presentar sus servicios y organizara la información de sus distintas sucursales.
-
-El proyecto se desarrolló como un sitio multipágina, priorizando una navegación simple, una identidad visual sobria y una buena experiencia tanto en escritorio como en dispositivos móviles.
-
-## Mi trabajo
-
-Participé en el diseño y desarrollo completo del sitio, definiendo la estructura de navegación, las páginas de cada sucursal y la forma de presentar servicios, información de contacto y llamados a la acción.
-
-El agendamiento se integró con AgendaPro, permitiendo que los usuarios accedan directamente al sistema de reservas correspondiente.
-
-También trabajé en optimización de rendimiento, SEO técnico y configuración del proyecto para producción.
-
-## Resultado
-
-El resultado es un sitio rápido y responsive que centraliza la presencia digital de BarVaron y puede extenderse a medida que se incorporen nuevas sucursales.
-
-La arquitectura permite mantener cada ubicación diferenciada sin perder una identidad visual común.

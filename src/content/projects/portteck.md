@@ -1,8 +1,9 @@
 ---
 title: "Portteck"
 slug: "portteck"
+
 subtitle: "Aplicación móvil de documentación técnica"
-description: "Aplicación móvil para consultar manuales e información técnica de productos de control de acceso."
+description: "Aplicación móvil para consultar manuales de productos de control de acceso, con un sistema web para administrar su contenido."
 
 category: "Aplicación móvil"
 client: "Portteck"
@@ -12,20 +13,35 @@ role: "Desarrollo Full Stack"
 
 website: "https://www.portteck.cl"
 
-cover: "@/assets/projects/portteck.png"
+cover: "@/assets/projects/portteck/portteck.png"
 coverAlt: "Vista previa de la aplicación móvil de Portteck"
 
+challenge:
+  - "Portteck necesitaba facilitar el acceso a los manuales técnicos de sus productos de control de acceso, permitiendo que clientes y técnicos pudieran consultar la documentación desde sus teléfonos."
+  - "La solución también debía permitir administrar los manuales y mantener la información disponible en la aplicación sin depender de nuevas versiones para cada actualización del contenido."
+
+decision:
+  title: "Una aplicación móvil conectada a un sistema de administración"
+  description: "Se desarrolló una aplicación con React Native para consultar la documentación organizada por categorías y productos. La administración del contenido se resolvió mediante una interfaz web desarrollada con Next.js, utilizando Supabase para almacenar y mantener disponible la información que consume la aplicación."
+
+result:
+  - "Portteck cuenta con una aplicación móvil que reúne la documentación técnica de sus productos y facilita su consulta desde un teléfono."
+  - "El sistema de administración permite incorporar y actualizar manuales, manteniendo el contenido disponible para la aplicación sin necesidad de publicar una nueva versión por cada modificación documental."
+
 stack:
-  - React Native
-  - Next.js
-  - Supabase
+  - name: React Native
+    category: development
+  - name: Next.js
+    category: development
+  - name: Supabase
+    category: infrastructure
 
 highlights:
-  - "Aplicación móvil desarrollada con React Native"
-  - "Información técnica organizada por categorías y productos"
-  - "Integración con backend para mantener el contenido actualizado"
-  - "Administración de información mediante aplicación web"
-  - "Persistencia y servicios utilizando Supabase"
+  - "Desarrollo de aplicación móvil con React Native"
+  - "Documentación organizada por categorías y productos"
+  - "Desarrollo de panel de administración con Next.js"
+  - "Integración con Supabase para gestión de información"
+  - "Actualización de contenido desde el sistema de administración"
 
 featured: true
 order: 3
@@ -35,27 +51,3 @@ status: "active"
 commercial: true
 technical: true
 ---
-
-## El proyecto
-
-Portteck necesitaba una forma más práctica de distribuir documentación técnica asociada a sus productos de control de acceso.
-
-La solución fue una aplicación móvil que permite a clientes y técnicos consultar manuales de instalación, uso y mantenimiento desde un único lugar.
-
-## La solución
-
-La aplicación fue desarrollada con React Native y organiza la documentación de acuerdo con las distintas categorías y productos disponibles.
-
-El contenido se obtiene desde un backend, permitiendo que la información pueda actualizarse sin necesidad de publicar una nueva versión de la aplicación cada vez que cambia un manual.
-
-## Administración
-
-Además de la aplicación móvil, se desarrolló una interfaz de administración utilizando Next.js para gestionar el contenido disponible.
-
-Supabase se utiliza como parte de la infraestructura para persistencia y servicios asociados a la aplicación.
-
-## Resultado
-
-La solución centraliza documentación que anteriormente podía encontrarse distribuida en distintas fuentes y facilita su consulta desde dispositivos móviles.
-
-Esto permite que técnicos y clientes accedan rápidamente a información actualizada sobre los productos.

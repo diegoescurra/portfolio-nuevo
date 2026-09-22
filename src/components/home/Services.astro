@@ -17,9 +17,9 @@ const services = [
     icon: Layers3,
   },
   {
-    title: "Integraciones",
+    title: "Conexiones y automatización",
     description:
-      "Conexión con APIs, servicios externos y automatizaciones.",
+      "Conecto formularios, reservas y herramientas para reducir tareas manuales.",
     icon: Link2,
   },
   {
@@ -33,18 +33,68 @@ const services = [
 
 <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)]">
     <div
-        class="mx-auto grid max-w-[1440px] divide-y divide-[var(--color-border)] px-5 md:grid-cols-2 md:divide-x md:divide-y-0 lg:grid-cols-4 lg:px-9"
+        class="services-grid mx-auto grid max-w-[1440px] px-5 md:grid-cols-2 lg:grid-cols-4 lg:px-9"
     >
         {
             services.map(({ title, description, icon : Icon }) => (
-                <article class="py-8 text-sm md:px-7 md:first:pl-0 lg:px-8">
+                <article class="service text-sm">
                     <>
-                        <Icon class="h-6 w-6 text-[var(--color-primary)]" />
-                        <h2 class="font-semibold text-[var(--color-primary)]">{title}</h2>
-                        <p class="mt-2 leading-5 text-[var(--color-text)]">{description}</p>
+                        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                            <Icon class="h-6 w-6" stroke-width={2} />
+                        </div>
+                        <h2 class="mt-5 text-base font-semibold text-[var(--color-primary)]">{title}</h2>
+                        <p class="mt-2 leading-6 text-[var(--color-primary-soft)]">{description}</p>
                     </>
                 </article>
             ))
         }
     </div>
 </section>
+
+<style>
+    .service {
+        padding-block: 2.25rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .service:last-child {
+        border-bottom: 0;
+    }
+
+    @media (min-width: 48rem) {
+        .service {
+            padding: 2.25rem 1.75rem;
+            border-bottom: 0;
+        }
+
+        .service:nth-child(odd) {
+            padding-left: 0;
+            border-right: 1px solid var(--color-border);
+        }
+
+        .service:nth-child(even) {
+            padding-right: 0;
+        }
+
+        .service:nth-child(-n + 2) {
+            border-bottom: 1px solid var(--color-border);
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .service:nth-child(n) {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid var(--color-border);
+            border-bottom: 0;
+        }
+
+        .service:first-child {
+            padding-left: 0;
+        }
+
+        .service:last-child {
+            padding-right: 0;
+            border-right: 0;
+        }
+    }
+</style>

@@ -27,10 +27,31 @@ const projects = defineCollection({
 
             cover: image(),
             coverAlt: z.string(),
+            coverPosition: z.string().default('center'),
 
-            stack: z.array(z.string()),
-            highlights: z.array(z.string()),
+            showcase: z.array(z.object({
+                title: z.string(),
+                description: z.string(),
+                image: image().optional(),
+                imageAlt: z.string().optional(),
+                imageLayout: z.enum(['landscape', 'portrait']).default('landscape'),
+            })).default([]),
+
+            stack: z.array(z.object({
+                name: z.string(),
+                category: z.enum(['development', 'deployment', 'integration', 'functionality', 'content', 'infrastructure']),
+            })).default([]),
+            highlights: z.array(z.string()).default([]),
+            challenge: z.array(z.string()).optional(),
+            decision: z.object({
+                title: z.string(),
+                description: z.string(),
+            }).optional(),
+            result: z.array(z.string()).optional(),
             quote: z.string().optional(),
+            quoteTitle: z.string().optional(),
+            quoteAuthor: z.string().optional(),
+            quoteAuthorRole: z.string().optional(),
             featured: z.boolean().default(false),
             order: z.number(),
 

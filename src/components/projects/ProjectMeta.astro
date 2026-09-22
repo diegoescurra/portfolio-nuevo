@@ -1,0 +1,22 @@
+---
+import { BriefcaseBusiness, CalendarDays, ExternalLink, Link2, UserRound } from '@lucide/astro';
+
+interface Props {
+    client: string;
+    year: number;
+    role: string;
+    website?: string;
+}
+
+const { client, year, role, website } = Astro.props;
+const siteName = website ? new URL(website).hostname.replace('www.', '') : 'No disponible';
+---
+
+<section class="border-y border-[var(--color-border)] bg-[var(--color-surface)]">
+    <dl class="mx-auto grid max-w-[1440px] px-5 sm:grid-cols-2 lg:grid-cols-4 lg:px-9">
+        <div class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:pr-6 lg:border-b-0"><UserRound size={21} strokeWidth={1.6} class="shrink-0 text-[var(--color-text)]" aria-hidden="true" /><div><dt class="text-sm text-[var(--color-text)]">Cliente</dt><dd class="mt-1 font-medium text-[var(--color-primary)]">{client}</dd></div></div>
+        <div class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:pl-6 lg:border-r lg:border-b-0 lg:px-6"><CalendarDays size={21} strokeWidth={1.6} class="shrink-0 text-[var(--color-text)]" aria-hidden="true" /><div><dt class="text-sm text-[var(--color-text)]">Año</dt><dd class="mt-1 font-medium text-[var(--color-primary)]">{year}</dd></div></div>
+        <div class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:border-b-0 sm:pr-6 lg:pl-6"><BriefcaseBusiness size={21} strokeWidth={1.6} class="shrink-0 text-[var(--color-text)]" aria-hidden="true" /><div><dt class="text-sm text-[var(--color-text)]">Rol</dt><dd class="mt-1 font-medium text-[var(--color-primary)]">{role}</dd></div></div>
+        <div class="flex items-center gap-4 py-5 sm:pl-6"><Link2 size={21} strokeWidth={1.6} class="shrink-0 text-[var(--color-text)]" aria-hidden="true" /><div><dt class="text-sm text-[var(--color-text)]">Sitio</dt><dd class="mt-1 font-medium text-[var(--color-primary)]">{website ? <a href={website} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[var(--color-accent)] hover:underline">{siteName}<ExternalLink size={13} strokeWidth={1.75} aria-hidden="true" /></a> : siteName}</dd></div></div>
+    </dl>
+</section>
