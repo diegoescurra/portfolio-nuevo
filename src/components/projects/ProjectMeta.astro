@@ -14,81 +14,44 @@ const siteName = website ? new URL(website).hostname.replace("www.", "") : "No d
 
 <section class="border-y border-[var(--color-border)] bg-[var(--color-surface)]">
     <dl class="mx-auto grid max-w-[1440px] px-5 sm:grid-cols-2 lg:grid-cols-4 lg:px-9">
-        <div
-            class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:pr-6 lg:border-b-0"
-        >
-            <UserRound
-                size={21}
-                stroke-width={1.6}
-                class="shrink-0 text-[var(--color-text)]"
-                aria-hidden="true"
-            /><div>
-                <dt class="text-sm text-[var(--color-text)]">Cliente</dt><dd
-                    class="mt-1 font-medium text-[var(--color-primary)]"
-                >
-                    {client}
-                </dd>
-            </div>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:pr-6 lg:border-b-0">
+            <dt class="contents">
+                <UserRound size={21} stroke-width={1.6} class="row-span-2 shrink-0 text-[var(--color-text)]" aria-hidden="true" />
+                <span class="text-sm text-[var(--color-text)]">Cliente</span>
+            </dt>
+            <dd class="col-start-2 mt-1 font-medium text-[var(--color-primary)]">{client}</dd>
         </div>
-        <div
-            class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:pl-6 lg:border-r lg:border-b-0 lg:px-6"
-        >
-            <CalendarDays
-                size={21}
-                stroke-width={1.6}
-                class="shrink-0 text-[var(--color-text)]"
-                aria-hidden="true"
-            /><div>
-                <dt class="text-sm text-[var(--color-text)]">Año</dt><dd
-                    class="mt-1 font-medium text-[var(--color-primary)]"
-                >
-                    {year}
-                </dd>
-            </div>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4 border-b border-[var(--color-border)] py-5 sm:pl-6 lg:border-r lg:border-b-0 lg:px-6">
+            <dt class="contents">
+                <CalendarDays size={21} stroke-width={1.6} class="row-span-2 shrink-0 text-[var(--color-text)]" aria-hidden="true" />
+                <span class="text-sm text-[var(--color-text)]">Año</span>
+            </dt>
+            <dd class="col-start-2 mt-1 font-medium text-[var(--color-primary)]">{year}</dd>
         </div>
-        <div
-            class="flex items-center gap-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:border-b-0 sm:pr-6 lg:pl-6"
-        >
-            <BriefcaseBusiness
-                size={21}
-                stroke-width={1.6}
-                class="shrink-0 text-[var(--color-text)]"
-                aria-hidden="true"
-            /><div>
-                <dt class="text-sm text-[var(--color-text)]">Rol</dt><dd
-                    class="mt-1 font-medium text-[var(--color-primary)]"
-                >
-                    {role}
-                </dd>
-            </div>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4 border-b border-[var(--color-border)] py-5 sm:border-r sm:border-b-0 sm:pr-6 lg:pl-6">
+            <dt class="contents">
+                <BriefcaseBusiness size={21} stroke-width={1.6} class="row-span-2 shrink-0 text-[var(--color-text)]" aria-hidden="true" />
+                <span class="text-sm text-[var(--color-text)]">Rol</span>
+            </dt>
+            <dd class="col-start-2 mt-1 font-medium text-[var(--color-primary)]">{role}</dd>
         </div>
-        <div class="flex items-center gap-4 py-5 sm:pl-6">
-            <Link2
-                size={21}
-                stroke-width={1.6}
-                class="shrink-0 text-[var(--color-text)]"
-                aria-hidden="true"
-            /><div>
-                <dt class="text-sm text-[var(--color-text)]">Sitio</dt><dd
-                    class="mt-1 font-medium text-[var(--color-primary)]"
-                >
-                    {
-                        website ? (
-                            <a
-                                href={website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="flex items-center gap-1.5 text-[var(--color-accent)] hover:underline"
-                            >
-                                {siteName}
-                                <ExternalLink size={13} stroke-width={1.75} aria-hidden="true" />
-                            </a>
-                        ) : (
-                            siteName
-                        )
-                    }
-                </dd>
-            </div>
+        <div class="grid grid-cols-[auto_1fr] items-center gap-x-4 py-5 sm:pl-6">
+            <dt class="contents">
+                <Link2 size={21} stroke-width={1.6} class="row-span-2 shrink-0 text-[var(--color-text)]" aria-hidden="true" />
+                <span class="text-sm text-[var(--color-text)]">Sitio</span>
+            </dt>
+            <dd class="col-start-2 mt-1 font-medium text-[var(--color-primary)]">
+                {
+                    website ? (
+                        <a href={website} target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-[var(--color-accent)] hover:underline">
+                            {siteName}
+                            <ExternalLink size={13} stroke-width={1.75} aria-hidden="true" />
+                        </a>
+                    ) : (
+                        siteName
+                    )
+                }
+            </dd>
         </div>
     </dl>
 </section>

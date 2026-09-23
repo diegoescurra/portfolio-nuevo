@@ -42,13 +42,13 @@ result:
   - "Las personas interesadas pueden revisar la información de las asesorías y acceder a las opciones de contacto desde un mismo lugar."
 
 stack:
-  - name: Next.js
+  - name: Astro
     category: development
   - name: Tailwind CSS
     category: development
 
 highlights:
-  - "Diseño y desarrollo del sitio web con Next.js"
+  - "Diseño y desarrollo del sitio web con Astro"
   - "Organización de servicios y recursos digitales"
   - "Presentación del proceso de asesoría"
   - "Integración de accesos a WhatsApp"

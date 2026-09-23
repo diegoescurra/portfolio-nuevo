@@ -25,7 +25,7 @@ const { project, previousProject, nextProject } = Astro.props;
             >
         </a>
         <nav
-            class="flex items-center gap-5 text-[var(--color-text)]"
+            class="hidden items-center gap-5 text-[var(--color-text)] md:flex"
             aria-label="Navegación entre proyectos"
         >
             {
@@ -74,7 +74,6 @@ const { project, previousProject, nextProject } = Astro.props;
                             href={project.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Visitar el sitio de ${project.title} (se abre en una nueva pestaña)`}
                             class="flex items-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
                         >
                             Visitar sitio
@@ -88,7 +87,6 @@ const { project, previousProject, nextProject } = Astro.props;
                             href={project.repository}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Ver el código de ${project.title} (se abre en una nueva pestaña)`}
                             class="flex items-center gap-2 rounded-xl border border-[var(--color-border)] px-5 py-3 text-sm font-medium text-[var(--color-primary)] transition-colors hover:border-[var(--color-primary)]"
                         >
                             Ver código
@@ -103,8 +101,9 @@ const { project, previousProject, nextProject } = Astro.props;
             <Image
                 src={project.cover}
                 alt={project.coverAlt}
-                widths={[640, 960, 1280, 1600]}
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                widths={[360, 480, 640, 768, 960, 1280]}
+                sizes="(min-width: 1440px) 684px, (min-width: 1024px) calc(50vw - 4.25rem), calc(100vw - 2.5rem)"
+                quality={75}
                 class="h-full w-full object-cover"
                 style={`object-position: ${project.coverPosition}`}
             />

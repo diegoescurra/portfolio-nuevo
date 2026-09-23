@@ -7,7 +7,7 @@ description: "Aplicación móvil para consultar manuales de productos de control
 
 category: "Aplicación móvil"
 client: "Portteck"
-year: 2025
+year: 2026
 
 role: "Desarrollo Full Stack"
 

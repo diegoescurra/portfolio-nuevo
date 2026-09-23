@@ -7,7 +7,7 @@ description: "Sitio web para presentar los servicios, insumos y máquinas de caf
 
 category: "Sitio web"
 client: "Ranut"
-year: 2025
+year: 2026
 
 role: "Diseño y desarrollo"
 
