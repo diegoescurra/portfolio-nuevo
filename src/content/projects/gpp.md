@@ -50,7 +50,7 @@ highlights:
 
 
 featured: false
-order: 5
+order: 3
 
 status: "development"
 

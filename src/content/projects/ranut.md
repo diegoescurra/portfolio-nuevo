@@ -44,7 +44,7 @@ highlights:
   - "Optimización de rendimiento y SEO técnico"
 
 featured: true
-order: 2
+order: 6
 
 status: "active"
 

@@ -41,13 +41,12 @@ decision:
 result:
   - "El cliente contó con un panel desde el que podía publicar propiedades y cargar sus imágenes por su cuenta, reduciendo su dependencia de un desarrollador para actualizar la oferta."
   - "El proyecto tuvo tres versiones: una inicial con Handlebars y jQuery, una segunda con React y una última con Next.js."
-  - "Actualmente el sitio no está disponible públicamente y se presenta como un proyecto archivado."
 
-featured: false
-order: 6
+featured: true
+order: 1
 
-status: "archived"
+status: "active"
 
-commercial: false
+commercial: true
 technical: true
 ---

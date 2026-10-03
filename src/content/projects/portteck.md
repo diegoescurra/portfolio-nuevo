@@ -43,7 +43,7 @@ highlights:
   - "Actualización de contenido desde el sistema de administración"
 
 featured: true
-order: 3
+order: 7
 
 status: "active"
 
