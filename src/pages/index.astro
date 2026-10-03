@@ -11,10 +11,13 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = await getCollection('projects');
 
-const featuredProjects = projects.filter((project) => project.data.featured);
+const featuredProjects = projects.filter((project) => project.data.featured)
+.sort((a, b) => a.data.order - b.data.order)
+.slice(0,4);
+console.log(featuredProjects)
 
 ---
-
+|
 <Layout
 	title="Diego Escurra | Desarrollo web"
 	description="Diseño y desarrollo sitios y aplicaciones web a medida para ayudar a negocios y organizaciones a crecer y simplificar sus procesos."

@@ -49,7 +49,7 @@ highlights:
 
 
 
-featured: false
+featured: true
 order: 3
 
 status: "development"

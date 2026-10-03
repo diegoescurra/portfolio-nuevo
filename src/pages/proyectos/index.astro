@@ -4,6 +4,9 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
+
+const orderProjects = projects
+.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <Layout title="Proyectos | Diego Escurra">
@@ -18,7 +21,7 @@ const projects = await getCollection("projects");
             <p class="mt-4 max-w-[640px] leading-6 text-[var(--color-text)]">
                 Una selección de sitios y aplicaciones desarrollados para impulsar negocios.
             </p>
-            <div class="mt-10"><ProjectList projects={projects} headingLevel={2} /></div>
+            <div class="mt-10"><ProjectList projects={orderProjects} headingLevel={2} /></div>
         </section>
     </main>
 </Layout>
