@@ -55,7 +55,7 @@ highlights:
   - "Configuración de dominio y despliegue en Vercel"
 
 featured: true
-order: 5
+order: 4
 
 status: "active"
 

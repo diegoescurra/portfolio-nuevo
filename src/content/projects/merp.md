@@ -38,7 +38,7 @@ highlights:
   - "Diseño responsive"
 
 featured: false
-order: 2
+order: 5
 
 status: "active"
 

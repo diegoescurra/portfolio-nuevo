@@ -58,7 +58,7 @@ quoteTitle: "Fue una experiencia de trabajo muy positiva y sin duda volvería a 
 quote: "Muchas gracias, Diego, por tu profesionalismo, disposición y por ayudarme a darle a TehagoelCV su propio espacio en internet. 🚀🌐"
 
 featured: true
-order: 4
+order: 2
 
 status: "active"
 
